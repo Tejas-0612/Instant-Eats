@@ -2,7 +2,6 @@
   "name": "food-ordering-app",
   "version": "1.0.0",
   "description": "This is online food ordering app",
-  "main": "App.js",
   "scripts": {
     "test": "jest",
     "start": "parcel index.html",
