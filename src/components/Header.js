@@ -6,7 +6,8 @@ import SideBar from "./SideBar";
 import { navlinks } from "../utils/constants";
 import useCheckOnline from "../utils/useCheckOnline";
 import { handleScrollTop } from "../utils/Helper";
-import FOODLOGO22 from "../images/FOODLOGO22.png";
+
+import MAIN_LOGO from "../images/MAIN_LOGO.png";
 import MENU_SVG from "../images/Menu.svg";
 import CLOSE_SVG from "../images/Close.svg";
 
@@ -23,7 +24,7 @@ const Header = () => {
     <div className="header">
       <div className="md:ml-3 w-20 h-20 my-auto">
         <Link to="/">
-          <img src={FOODLOGO22} className="p-2" />
+          <img src={MAIN_LOGO} className="p-2" />
         </Link>
       </div>
 
