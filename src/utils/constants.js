@@ -12,13 +12,13 @@ export const IMG_SMALL_URL =
   "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,e_color,c_fill/";
 
 export const RES_DATA_URL =
-  "https://instanteats-server.onrender.com/api/restaurants/";
+  "https://instanteats-server-vln9.onrender.com/api/restaurants/";
 
 export const MENU_URL =
-  "https://instanteats-server.onrender.com/api/restaurant/";
+  "https://instanteats-server-vln9.onrender.com/api/restaurant/";
 
 export const COLLECTIONS_URL =
-  "https://instanteats-server.onrender.com/api/collections/";
+  "https://instanteats-server-vln9.onrender.com/api/collections/";
 
 export const OFFER_LOGO_URL =
   "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_20,h_20/";
