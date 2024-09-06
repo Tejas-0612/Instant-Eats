@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import useRestaurantData from "../utils/useRestaurantData";
 import useCheckOnline from "../utils/useCheckOnline";
 import RestaurantCard from "./RestaurantCard";
-import { handleScrollTop } from "../utils/Helper";
+import { filterData, handleScrollTop } from "../utils/Helper";
 import FilteredButton from "./FilteredButton";
 import { Shimmer } from "./Shimmer";
 
@@ -14,6 +14,7 @@ const Body = () => {
     useRestaurantData();
   const rescards = AllRes;
   const [searchVal, setSearchVal] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
   if (onlineStatus == false)
     return (
@@ -21,6 +22,22 @@ const Body = () => {
         Looks like you're offline !!! Please Check your internet Connection
       </h1>
     );
+
+  const searchData = (searchText, restaurants) => {
+    if (searchText !== "") {
+      const filteredData = filterData(searchText, restaurants);
+      setFilteredRes(filteredData);
+      setErrorMessage("");
+      if (filteredData?.length === 0) {
+        setErrorMessage(
+          `Sorry, we couldn't find any results for "${searchText}"`
+        );
+      }
+    } else {
+      setErrorMessage("");
+      setFilteredRes(restaurants);
+    }
+  };
 
   return (
     <div id="body-component" className="body">
@@ -31,20 +48,22 @@ const Body = () => {
           <input
             type="text"
             value={searchVal}
-            onChange={(e) => setSearchVal(e.target.value)}
+            onChange={(e) => {
+              setSearchVal(e.target.value);
+              searchData(e.target.value, AllRes);
+            }}
             placeholder="Search any restaurant"
           />
           <button
             onClick={() => {
-              const Filtered = AllRes.filter((res) =>
-                res.info.name.toLowerCase().includes(val1.toLowerCase())
-              );
-              setFilteredRes(Filtered);
+              searchData(searchVal, AllRes);
             }}
           >
             Search
           </button>
         </div>
+        {errorMessage && <div className="error-container">{errorMessage}</div>}
+
         <div className="body-filters">
           <FilteredButton
             onClick={() => {

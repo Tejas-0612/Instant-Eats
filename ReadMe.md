@@ -24,11 +24,12 @@
 
 ## <a name="introduction">🤖 Introduction</a>
 
-Instant Eats 🍽️ is a web application built using React, Redux Toolkit, Parcel, TailwindCSS, and real-time data from Swiggy. It allows users to browse through available food items, add them to the cart, and place orders. The application is designed to provide a seamless user experience with features such as infinite scrolling, lazy loading, debouncing, and custom loading animations.
+Instant Eats 🍽️ is a web application built using React, Redux Toolkit, Parcel, TailwindCSS, and real-time data from Swiggy. It allows users to browse through available food items, add them to the cart, and place orders. The application is designed to provide a seamless user experience with features such as searching,filtering, lazy loading, debouncing, and custom loading animations.
 
 ## <a name="features">🔋 Features</a>
 
 - Browse and search for food items.
+- Filtering the food items.
 - Add and remove food items from the cart.
 - Real-time data integration from Swiggy.
 - Lazy loading of components to enhance performance.
